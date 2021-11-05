@@ -1,2 +1,3 @@
 # AdventOfCode
-Code repo for Advent of code challenges
+Code repo for the advent of code challenges
+https://adventofcode.com/
