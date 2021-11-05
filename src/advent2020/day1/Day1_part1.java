@@ -1,4 +1,4 @@
-package advent2020;
+package advent2020.day1;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -33,6 +33,7 @@ public class Day1_part1{
 					produkt = inputdata[i]*inputdata[j];
 					System.out.println(inputdata[i] + " + " + inputdata[j] + " = " + summa);
 					System.out.println(inputdata[i] + " * " + inputdata[j] + " = " + produkt);
+					br.close();
 					return;
 				}
 			}
