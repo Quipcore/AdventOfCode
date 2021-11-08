@@ -11,7 +11,7 @@ public class Day1_part1{
 	//https://adventofcode.com/2020/day/1
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		File file = new File("D:\\Eclipse Workspace\\AdventOfCode\\src\\advent2020\\InputDay1");
+		File file = new File("D:\\Eclipse Workspace\\AdventOfCode\\src\\advent2020\\day1\\InputDay1");
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
 		String line;
