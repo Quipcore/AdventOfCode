@@ -2,7 +2,6 @@ package advent2020.day2;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,7 +16,6 @@ public class Day2_part1 {
 		File file = new File(FilePath);
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
-		String line = "";
 
 		Path path = Paths.get(FilePath);
 		int lineAmount = (int) Files.lines(path).count();

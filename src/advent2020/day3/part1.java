@@ -41,13 +41,13 @@ public class part1 {
         //Checking for trees
         int j = 0;
         int trees = 0;
-        for(int i = 1; i < map[0].length; i++) {
-            if(i%3 == 0) {
+        for(int i = 1; i < map.length; i++) {
+            if(i%2 == 0 && j < 322) {
                 j++;
-                if(map[j][i].equals("#")){
+                if(map[i][j].equals("#")){
                     trees++;
                 }
-                System.out.println(j + ", " + i + ", " + map[j][i]);
+                System.out.println(i + ", " + j + ", " + map[i][j]);
             }
         }
         System.out.println("Tress amount: " + trees);
