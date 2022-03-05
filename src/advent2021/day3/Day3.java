@@ -1,15 +1,19 @@
 package advent2021.day3;
 
 import java.io.IOException;
+import java.util.List;
 
 import datacollector.datacollector;
 
 public class Day3 {
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
 		String[] inputdata = datacollector.datacollectorSTR("src/advent2021/day3/inputdata");
-
+		String result = run1(inputdata);
+		System.out.println(result);
+	}
+	
+	public static String run1(String[] inputdata) {
 		int nollor = 0;
 		int ettor = 0;
 		String gamma = "";
@@ -36,9 +40,11 @@ public class Day3 {
 			nollor = 0;
 			ettor = 0;
 		}
-		System.out.println("GAMMA = " + gamma);
-		System.out.println("Epsilon =  " + epislon);
-		System.out.println("Power " + (Integer.parseInt(gamma,2)*Integer.parseInt(epislon,2)));
+		int returnValue = Integer.parseInt(gamma,2)*Integer.parseInt(epislon,2);
+		return String.valueOf(returnValue);
 	}
 
+	public static String run2(String[] inputdata) {
+		return null;
+	}
 }
