@@ -2,6 +2,7 @@ package datacollector;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -52,5 +53,12 @@ public class datacollector {
 		fr.close();
 
 		return inputlist;
+	}
+	
+	public static String readLine(String url) throws IOException {
+		File file = new File(url);
+		FileReader fr = new FileReader(file);
+		BufferedReader br = new BufferedReader(fr);
+		return br.readLine();
 	}
 }
