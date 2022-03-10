@@ -2,7 +2,6 @@ package datacollector;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -10,7 +9,13 @@ import java.util.List;
 
 public class datacollector {
 
-	public static int[] datacollectorINT(String URL) throws IOException {
+	/**
+	 * Returns a integer array of lines from file one disk.
+	 * @param URL
+	 * @return
+	 * @throws IOException
+	 */
+	public static int[] getIntArray(String URL) throws IOException {
 		File file = new File(URL);
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
@@ -31,15 +36,27 @@ public class datacollector {
 		return inputdata;
 	}
 
-	public static String[] datacollectorSTR(String url) throws IOException {
+	/**
+	 * Returns a string array of lines from file one disk.
+	 * @param url
+	 * @return
+	 * @throws IOException
+	 */
+	public static String[] getStringArray(String url) throws IOException {
 
-		List<String> inputList = datacollectorListSTR(url);
+		List<String> inputList = getList(url);
 		String[] inputdata = inputList.toArray(new String[inputList.size()]);
 
 		return inputdata;
 	}
 
-	public static List<String> datacollectorListSTR(String url) throws IOException {
+	/**
+	 * Returns a list of lines from file one disk
+	 * @param url
+	 * @return
+	 * @throws IOException
+	 */
+	public static List<String> getList(String url) throws IOException {
 		File file = new File(url);
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
@@ -55,10 +72,17 @@ public class datacollector {
 		return inputlist;
 	}
 	
-	public static String readLine(String url) throws IOException {
+	/**
+	 * Returns the first line of a file on disk.
+	 * @param url
+	 * @return
+	 * @throws IOException
+	 */
+	public static String getFirstLine(String url) throws IOException {
 		File file = new File(url);
 		FileReader fr = new FileReader(file);
-		BufferedReader br = new BufferedReader(fr);
-		return br.readLine();
+		try (BufferedReader br = new BufferedReader(fr)) {
+			return br.readLine();
+		}
 	}
 }

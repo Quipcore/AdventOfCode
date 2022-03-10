@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 class Day4Test {
 
+	@SuppressWarnings("unused")
 	@Test
 	void test1() throws IOException {
 		String tbrickFil = "src/advent2021/day4/testBrickor";
@@ -21,6 +22,7 @@ class Day4Test {
 		assertEquals(4512, result);
 	}
 	
+	@SuppressWarnings("unused")
 	@Test
 	void test2() throws IOException {
 		String tbrickFil = "src/advent2021/day4/testBrickor";

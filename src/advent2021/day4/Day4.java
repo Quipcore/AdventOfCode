@@ -16,7 +16,7 @@ public class Day4 {
 	}
 
 	public static int part1(String brickFil, String nummerFil) throws IOException {
-		String[] input = datacollector.datacollectorSTR(brickFil);
+		String[] input = datacollector.getStringArray(brickFil);
 		List<Bricka> brickor = new LinkedList<>();
 
 		int index = 0;
@@ -29,7 +29,7 @@ public class Day4 {
 			index += 6;
 		}
 
-		String[] strArr = (datacollector.readLine(nummerFil)).split(",");
+		String[] strArr = (datacollector.getFirstLine(nummerFil)).split(",");
 		int[] nummer = new int[strArr.length];
 		for (int i = 0; i < strArr.length; i++) {
 			nummer[i] = Integer.valueOf(strArr[i]);
@@ -51,7 +51,7 @@ public class Day4 {
 
 	public static int part2(String brickFil, String nummerFil) throws IOException {
 		// TODO Auto-generated method stub
-		String[] input = datacollector.datacollectorSTR(brickFil);
+		String[] input = datacollector.getStringArray(brickFil);
 		List<Bricka> brickor = new LinkedList<>();
 
 		int index = 0;
@@ -64,7 +64,7 @@ public class Day4 {
 			index += 6;
 		}
 
-		String[] strArr = (datacollector.readLine(nummerFil)).split(",");
+		String[] strArr = (datacollector.getFirstLine(nummerFil)).split(",");
 		int[] nummer = new int[strArr.length];
 		for (int i = 0; i < strArr.length; i++) {
 			nummer[i] = Integer.valueOf(strArr[i]);

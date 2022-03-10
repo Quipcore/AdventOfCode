@@ -20,7 +20,7 @@ public class Day5 {
 
 	public static int part1(String puzzledata) throws IOException {
 		// TODO Auto-generated method stub
-		List<String> coords = datacollector.datacollectorListSTR(puzzledata);
+		List<String> coords = datacollector.getList(puzzledata);
 
 		List<LineSegment> lines = new LinkedList<>();
 		int maxVal = 0;
@@ -50,7 +50,7 @@ public class Day5 {
 
 	public static int part2(String puzzledata) throws IOException {
 		// TODO Auto-generated method stub
-		List<String> coords = datacollector.datacollectorListSTR(puzzledata);
+		List<String> coords = datacollector.getList(puzzledata);
 
 		List<LineSegment> lines = new LinkedList<>();
 		int maxVal = 0;

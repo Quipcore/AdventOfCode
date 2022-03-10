@@ -8,7 +8,7 @@ import datacollector.datacollector;
 public class Day3 {
 
 	public static void main(String[] args) throws IOException {
-		String[] inputdata = datacollector.datacollectorSTR("src/advent2021/day3/inputdata");
+		String[] inputdata = datacollector.getStringArray("src/advent2021/day3/inputdata");
 		String result = run1(inputdata);
 		System.out.println(result);
 	}

@@ -8,7 +8,7 @@ public class Day2 {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		String[] inputdata = datacollector.datacollectorSTR("src/advent2021/day2/inputdata");
+		String[] inputdata = datacollector.getStringArray("src/advent2021/day2/inputdata");
 
 		int aim = 0;
 		int Xpos = 0;
