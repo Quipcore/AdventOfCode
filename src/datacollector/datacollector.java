@@ -37,7 +37,7 @@ public class datacollector {
 	}
 
 	/**
-	 * Returns a string array of lines from file one disk.
+	 * Returns a string array of lines from file on disk.
 	 * @param url
 	 * @return
 	 * @throws IOException
@@ -51,7 +51,7 @@ public class datacollector {
 	}
 
 	/**
-	 * Returns a list of lines from file one disk
+	 * Returns a list of lines from file on disk.
 	 * @param url
 	 * @return
 	 * @throws IOException
