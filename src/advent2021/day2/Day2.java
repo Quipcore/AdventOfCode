@@ -15,7 +15,7 @@ public class Day2 {
 		int Ypos = 0;
 		char XposS;
 		char aimPos;
-		
+
 		for (int i = 0; i < inputdata.length; i++) {
 			if (inputdata[i].contains("forward")) {
 				XposS = inputdata[i].charAt(inputdata[i].length() - 1);
@@ -29,7 +29,7 @@ public class Day2 {
 				aim += Character.getNumericValue(aimPos);
 			}
 		}
-		System.out.println(Xpos*Ypos);
+		System.out.println(Xpos * Ypos);
 		System.out.println();
 	}
 }
