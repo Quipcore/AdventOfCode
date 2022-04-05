@@ -139,17 +139,36 @@ public class Day8 {
 			}
 		}
 		
-		int num = 0; //Problem in loop
-		String[] strArr = s1.split(" ");
+		int num = 0; //Problem in loop, output and input not in same order
+		String[] strArr = s1.trim().split(" ");
+		
 		for(int i = 0; i < strArr.length; i++) {
+			List<Character> c = new ArrayList<>();
+			for (char ch : strArr[i].toCharArray()) {
+				c.add(ch);
+			}
 			for(int j = 0; j < values.length; j++) {
-				if(values[j].equals(strArr[i])) {
-					num += j *Math.pow(10, strArr.length-1-i);
+				final int index = j;
+				if(c.stream().allMatch(ch -> values[index].contains(String.valueOf(ch))) && (values[index].length() == strArr[i].length())) {
+					num += (j * Math.pow(10, strArr.length-i-1));
+					System.out.println(num);
 				}
 			}
 		}
 		
-		System.out.println(num);
+		/*
+		for(int i = 0; i < strArr.length; i++) {
+			System.out.println(strArr[i]);
+			for(int j = 0; j < values.length; j++) {
+				if(strArr[i].equals(values[j])){
+					num += (j * Math.pow(10, strArr.length-i-1));
+					System.out.println("num+ " + num);
+					break;
+				}
+			}
+		}
+		*/
+		System.out.println();
 		return num;
 	}
 	
