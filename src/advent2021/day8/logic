@@ -1,0 +1,17 @@
+Hitta alla med vi vet med längd
+1: 2, cf
+4: 4, bcdf
+7: 3, acf
+8: 7, abcdefg
+
+2: 5, acdeg : ce - ce ingår i bara 8
+3: 5, acdfg : cf - cf ingår i 1 (4,7,8)
+5: 5, abdfg : bf - bf ingår i bara 4,8
+
+0: 6, abcefg : ce - ce ingår i 2 och 8
+6: 6, abdefg : de - de ingår i 2 och 8
+9: 6, abcdfg : cd - cd ingår i 3
+
+
+bcef
+adg
