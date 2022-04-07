@@ -1,7 +1,6 @@
 package advent2015.day2;
 
 import java.io.IOException;
-import java.util.LinkedList;
 import java.util.List;
 
 import datacollector.datacollector;

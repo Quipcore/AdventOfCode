@@ -11,6 +11,7 @@ public class datacollector {
 
 	/**
 	 * Returns a integer array of lines from file one disk.
+	 * 
 	 * @param URL
 	 * @return
 	 * @throws IOException
@@ -38,6 +39,7 @@ public class datacollector {
 
 	/**
 	 * Returns a string array of lines from file on disk.
+	 * 
 	 * @param url
 	 * @return
 	 * @throws IOException
@@ -52,6 +54,7 @@ public class datacollector {
 
 	/**
 	 * Returns a list of lines from file on disk.
+	 * 
 	 * @param url
 	 * @return
 	 * @throws IOException
@@ -71,9 +74,10 @@ public class datacollector {
 
 		return inputlist;
 	}
-	
+
 	/**
 	 * Returns the first line of a file on disk.
+	 * 
 	 * @param url
 	 * @return
 	 * @throws IOException
@@ -85,4 +89,5 @@ public class datacollector {
 			return br.readLine();
 		}
 	}
+
 }

@@ -14,7 +14,7 @@ class Day9Test {
 	
 		int result = Day9.part1(testdata);
 		System.out.println("Test 1: " + result);
-		assertEquals(26, result);
+		assertEquals(15, result);
 	}
 	
 	@Test
@@ -24,7 +24,7 @@ class Day9Test {
 	
 		long result = Day9.part2(testdata);
 		System.out.println("Test 2: " + result);
-		assertEquals(26, result);
+		assertEquals(1134, result);
 	}
 
 }

@@ -3,12 +3,7 @@ package advent2021.day8;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-
-import javax.xml.stream.events.Characters;
-
 import datacollector.datacollector;
 
 public class Day8 {
