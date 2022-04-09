@@ -52,7 +52,7 @@ public class Day9 {
 
 	public static int part2(String puzzledata) throws IOException {
 		int[][] map = createMap(puzzledata);
-		List<Integer> lowPointSizes = new LinkedList<>();
+		List<Integer> lowPointSizes = new ArrayList<>();
 
 		for (int row = 0; row < map.length; row++) {
 			for (int col = 0; col < map[0].length; col++) {
@@ -68,9 +68,9 @@ public class Day9 {
 				}
 			}
 		}
+		
+		lowPointSizes = lowPointSizes.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
 
-		lowPointSizes = lowPointSizes.stream().sorted(Comparator.reverseOrder()).collect(() -> new LinkedList<>(),
-				(list, element) -> list.add(element), (listA, listB) -> listA.addAll(listB));
 
 		return lowPointSizes.get(0) * lowPointSizes.get(1) * lowPointSizes.get(2);
 	}
