@@ -19,7 +19,7 @@ public class datacollector {
 	//---------------------------------------------------------------------------------------------------
 
 	public static String[] getStringArray(String url) throws IOException {
-		return getStream(url).map(s -> String.valueOf(s)).toArray(size -> new String[size]);
+		return getStream(url).toArray(size -> new String[size]);
 	}
 
 	//---------------------------------------------------------------------------------------------------
