@@ -26,8 +26,8 @@ public class Day6 {
 		// TODO Auto-generated method stub
 		String puzzledata = "src/advent2021/day6/puzzledata";
 
-		// long result = part1(puzzledata, 80);
-		// System.out.println("Test 1: " + result);
+		//long result = part1(puzzledata, 80);
+		//System.out.println("Test 1: " + result);
 
 		long result = part2(puzzledata, 256);
 		System.out.println("Test 2: " + result);
@@ -40,7 +40,7 @@ public class Day6 {
 				() -> new LinkedList<>(), (list, element) -> list.add(element), (listA, listB) -> listA.addAll(listB));
 
 		int newFishes = 0;
-		System.out.println("Hello");
+		//System.out.println("Hello");
 		for (int i = 0; i < days; i++) {
 			System.out.println(i);
 			for (int index = 0; index < fisk.size(); index++) {
@@ -81,7 +81,7 @@ public class Day6 {
 					fishAges[i] = fishAges[i + 1];
 				}
 			}
-			System.out.println(day);
+			//System.out.println(day);
 		}
 
 		long sum = 0;
