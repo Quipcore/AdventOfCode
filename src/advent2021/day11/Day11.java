@@ -1,14 +1,14 @@
-package advent2021.notStarted.day14;
+package advent2021.day11;
 
 import java.io.IOException;
 
 import datacollector.datacollector;
 
-public class Day14 {
+public class Day11 {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		String puzzledata = "src/advent2021/day14/puzzledata";
+		String puzzledata = "src/advent2021/day11/puzzledata";
 
 		int result1 = part1(puzzledata);
 		System.out.println("Test 1: " + result1);

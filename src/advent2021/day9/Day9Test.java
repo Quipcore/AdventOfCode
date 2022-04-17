@@ -1,9 +1,10 @@
 package advent2021.day9;
 
-import static org.junit.Assert.assertEquals;
 import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Day9Test {
 
