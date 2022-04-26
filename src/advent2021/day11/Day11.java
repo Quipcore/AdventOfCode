@@ -1,11 +1,10 @@
 package advent2021.day11;
 
-import datacollector.datacollector;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import datacollector.datacollector;
 
 public class Day11 {
     private static class Pair {
@@ -19,7 +18,7 @@ public class Day11 {
     }
 
     public static void main(String[] args) throws IOException {
-        String puzzledata = "day11/puzzledata";
+        String puzzledata = "src/advent2021/day11/puzzledata";
 
         int result1 = part1(puzzledata);
         System.out.println("Test 1: " + result1);

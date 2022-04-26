@@ -1,9 +1,7 @@
 .metadata
 bin/
 tmp/
-out/
 .idea/
-*.class
 *.tmp
 *.bak
 *.swp
@@ -13,7 +11,9 @@ local.properties
 .loadpath
 .recommenders
 .classpath
-*.project
+.DS_Store
+.class
+.project
 *.iml
 
 # External tool builders
@@ -64,4 +64,3 @@ local.properties
 # Uncomment this line if you wish to ignore the project description file.
 # Typically, this file would be tracked if it contains build/dependency configurations:
 #.project
-/bin/

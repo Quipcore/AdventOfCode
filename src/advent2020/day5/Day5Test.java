@@ -1,6 +1,6 @@
 package advent2020.day5;
 
-import static org.junit.Assert.assertEquals;
+import static junit.framework.Assert.assertEquals;
 
 import java.io.IOException;
 
@@ -16,7 +16,7 @@ class Day5Test {
 
 		int result = Day5.part1(testdata);
 		System.out.println("Test 1: " + result);
-		assertEquals(820, result);
+		assertEquals(11, result);
 	}
 
 	@Test

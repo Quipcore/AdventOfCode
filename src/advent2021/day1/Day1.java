@@ -7,7 +7,7 @@ import datacollector.datacollector;
 public class Day1 {
 
 	public static void main(String[] args) throws IOException {
-		int[] inputdata = datacollector.getIntArray("src/advent2021/day1/inputdata");
+		int[] inputdata = datacollector.getIntArray("advent2021/day1/inputdata");
 		
 		LinkedList<Integer> measurements = new LinkedList<>();
 		for(int i = 0; i < inputdata.length-2; i++) {

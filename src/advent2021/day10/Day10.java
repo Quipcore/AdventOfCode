@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 import java.util.stream.Collectors;
-
 import datacollector.datacollector;
 
 public class Day10 {
