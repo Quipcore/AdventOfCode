@@ -2,7 +2,6 @@ package advent2021.day12;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Stream;
 
 import datacollector.datacollector;
 
@@ -13,7 +12,7 @@ public class Day12 {
 
 
     public static void main(String[] args) throws IOException {
-        String puzzledata = "src/advent2021/day12/puzzledata";
+        String puzzledata = "advent2021/day12/puzzledata";
 
         int result1 = part1(puzzledata);
         System.out.println("Test 1: " + result1);

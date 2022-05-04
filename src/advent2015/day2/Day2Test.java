@@ -14,7 +14,7 @@ class Day2Test {
 	@Test
 	void test1() throws IOException {
 
-		String testdata = "src/advent2015/day2/testdata";		
+		String testdata = "src/advent2015/day2/testdata_dots";
 	
 		int result = Day2.part1(testdata);
 		System.out.println("Test 1: " + result);
@@ -23,7 +23,7 @@ class Day2Test {
 	
 	@Test
 	void test2() throws IOException {
-		String testdata = "src/advent2015/day2/testdata";	
+		String testdata = "src/advent2015/day2/testdata_dots";
 		
 	
 		int result = Day2.part2(testdata);

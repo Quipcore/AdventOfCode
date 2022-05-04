@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Day12Test {
 
-	String testdata = "src/advent2021/day12/testdata";
-	String testdata1 = "src/advent2021/day12/testdata1";
-	String testdata2 = "src/advent2021/day12/testdata2";
+	String testdata = "advent2021/day12/testdata";
+	String testdata1 = "advent2021/day12/testdata1";
+	String testdata2 = "advent2021/day12/testdata2";
 
 	@Test
 	void test1() throws IOException {

@@ -26,7 +26,7 @@ public class Day6 {
 		// TODO Auto-generated method stub
 		String puzzledata = "src/advent2021/day6/puzzledata";
 
-		//long result = part1(puzzledata, 80);
+		//long result = part1(puzzledata_dots, 80);
 		//System.out.println("Test 1: " + result);
 
 		long result = part2(puzzledata, 256);
