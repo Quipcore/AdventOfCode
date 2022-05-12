@@ -22,7 +22,7 @@ public class Day13Test {
     @Test
     void test2() throws IOException {
 
-        int result = Day13.part2(testdots/*,testfolds*/);
+        int result = Day13.part2(testdots,testfolds);
         System.out.println("Test 2: " + result);
         assertEquals(0, result);
     }

@@ -1,75 +1,113 @@
 package advent2021.day13;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import datacollector.datacollector;
 
 public class Day13 {
     public static void main(String[] args) throws IOException {
-        String dotdata = "advent2021/day12/puzzledata_dots";
-        String folddata = "advent2021/day12/puzzledata_folds";
+        String dotdata = "src/advent2021/day13/puzzledata_dots";
+        String folddata = "src/advent2021/day13/puzzledata_folds";
 
         int result = part1(dotdata, folddata);
         System.out.println("Test 1: " + result);
 
-        //result = part2(puzzledata);
+        result = part2(dotdata, folddata);
         System.out.println("Test 2: " + result);
     }
 
+    //---------------------------------------------------------------------------------------------------------
+
     public static int part1(String dotdata, String folddata) throws IOException {
-        int yMax = Integer.valueOf(datacollector.getStream(folddata).filter(s -> s.contains("y=")).findFirst().get().split(" ")[2].split("=")[1]) * 2+1;
-        int xMax = Integer.valueOf(datacollector.getStream(folddata).filter(s -> s.contains("x=")).findFirst().get().split(" ")[2].split("=")[1]) * 2+1;
-        final boolean[][] map = new boolean[yMax][xMax];
 
-        datacollector.getStream(dotdata).forEach(s -> {
-            String[] temp = s.split(",");
-            map[Integer.valueOf(temp[1])][Integer.valueOf(temp[0])] = true;
-        });
+        final Boolean[][] map = createMap(dotdata, folddata);
+        List<String> foldList = datacollector.getStream(folddata).map(s -> s.split(" ")[2]).toList();
 
-        List<String> foldList = datacollector.getStream(folddata).map(s -> s.split(" ")[2]).collect(Collectors.toList());
+        String[] temp = foldList.get(0).split("=");
+        String foldDirection = temp[0];
+        int foldValue = Integer.parseInt(temp[1]);
+        Boolean[][] final_map = foldMap(map, foldDirection, foldValue);
 
-
-        boolean[][] final_map = map;
-        for (String fold : foldList) {
-            String[] temp = fold.split("=");
-            String direction = temp[0];
-            int value = Integer.valueOf(temp[1]);
-
-            boolean[][] map2;
-            if(direction.equals("x")){
-                map2 = new boolean[value][final_map[0].length];
-            }else{
-                map2 = new boolean[final_map.length][value];
-            }
-
-            for(int row = 0; row < map2.length;row++){
-                for(int col = 0; col < map2[0].length;col++){
-                    map2[col][row] = final_map[col][row];
-                    if(direction.equals("x")){
-                        map2[col][row] |= final_map[col][final_map[0].length-row-1];
-                    }else{
-                        map2[col][row] |= final_map[final_map.length-col-1][row];
-                    }
-
-                }
-            }
-            final_map = map2;
-        }
-        int counter = 0;
-        for(int i = 0; i < final_map.length;i++){
-            for(int j = 0; j <final_map[0].length;j++){
-                if(final_map[i][j]){
-                    counter++;
-                }
-            }
-        }
+        int counter = (int) Arrays.stream(final_map).flatMap(Arrays::stream).filter(b -> b).count();
 
         return counter;
     }
 
-    public static int part2(String puzzledata) throws IOException {
+    //---------------------------------------------------------------------------------------------------------
+
+    public static int part2(String dotdata, String folddata) throws IOException {
+
+        final Boolean[][] map = createMap(dotdata, folddata);
+        List<String> foldList = datacollector.getStream(folddata)
+                                             .map(s -> s.split(" ")[2]).toList();
+
+        Boolean[][] final_map = map;
+        for (String fold : foldList) {
+            String[] temp = fold.split("=");
+            String foldDirection = temp[0];
+            int foldValue = Integer.parseInt(temp[1]);
+            final_map = foldMap(final_map, foldDirection, foldValue);
+        }
+
+        String letterMap = "";
+        for (Boolean[] booleans : final_map) {
+            for (int x = 0; x < final_map[0].length; x++) {
+                letterMap += booleans[x]
+                        ? "#"
+                        : ".";
+            }
+            letterMap += "\n";
+        }
+        System.out.println(letterMap);
+
         return 0;
+    }
+
+    //---------------------------------------------------------------------------------------------------------
+
+    private static Boolean[][] createMap(String dotdata, String folddata) throws IOException {
+        int yMax = Integer.parseInt(datacollector.getStream(folddata)
+                .filter(s -> s.contains("y="))
+                .findFirst()
+                .orElse("")
+                .split(" ")[2]
+                .split("=")[1]) * 2 + 1;
+
+        int xMax = Integer.parseInt(datacollector.getStream(folddata)
+                .filter(s -> s.contains("x="))
+                .findFirst()
+                .orElse("")
+                .split(" ")[2]
+                .split("=")[1]) * 2 + 1;
+
+        final Boolean[][] map = new Boolean[yMax][xMax];
+        Arrays.stream(map).forEach(boolArr -> Arrays.fill(boolArr, false));
+
+        datacollector.getStream(dotdata).forEach(s -> {
+            String[] temp = s.split(",");
+            map[Integer.parseInt(temp[1])][Integer.parseInt(temp[0])] = true;
+        });
+        return map;
+    }
+
+    //---------------------------------------------------------------------------------------------------------
+
+    private static Boolean[][] foldMap(Boolean[][] map, String foldDirection, int foldValue) {
+
+        Boolean[][] foldedMap = foldDirection.equals("x")
+                ? new Boolean[map.length][foldValue]
+                : new Boolean[foldValue][map[0].length];
+
+        for (int y = 0; y < foldedMap.length; y++) {
+            for (int x = 0; x < foldedMap[0].length; x++) {
+                foldedMap[y][x] = map[y][x];
+                foldedMap[y][x] |= foldDirection.equals("x")
+                        ? map[y][map[0].length - x - 1]
+                        : map[map.length - y - 1][x];
+            }
+        }
+        return foldedMap;
     }
 }
