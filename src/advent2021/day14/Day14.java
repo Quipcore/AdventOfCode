@@ -1,5 +1,6 @@
 package advent2021.day14;
 
+import java.awt.event.WindowStateListener;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,10 +19,10 @@ public class Day14 {
     public static void main(String[] args) throws IOException {
 
         String puzzledata = "src/advent2021/day14/puzzledata";
-
+        /*
         int result1 = part1(puzzledata, "NCOPHKVONVPNSKSHBNPF");
         System.out.println("Test 1: " + result1);
-
+        */
         long result2 = part2(puzzledata, "NCOPHKVONVPNSKSHBNPF");
         System.out.println("Test 2: " + result2);
     }
@@ -71,6 +72,7 @@ public class Day14 {
 
     public static long part2(String puzzledata, String template) throws IOException {
 
+        /*
         polymerMap = new HashMap<>();
         Pt2CharMap = new HashMap<>();
         globalCounter = template.length();
@@ -113,12 +115,75 @@ public class Day14 {
 
 
         return max - min;
+        *
+         */
+
+        polymerMap = new HashMap<>();
+        Map<String, Long> pairMap = new HashMap<>();
+        Map<String, Long> tempMap = new HashMap<>();
+
+        datacollector.getStream(puzzledata).forEach(s -> {
+            String[] temp = s.split(" ");
+            polymerMap.put(temp[0], temp[2]);
+        });
+
+        for (int i = 0; i < template.length() - 1; i++) {
+            pairMap.put(template.substring(i, i + 2), 1L);
+        }
+        System.out.println(pairMap.toString());
+        for (int i = 0; i < 10; i++) {
+            for (String pair : pairMap.keySet()) {
+                String newPair = pair.charAt(0) + polymerMap.get(pair);
+
+                for (int c = 0; c < 2; c++) {
+
+                    if (tempMap.containsKey(newPair)) {
+                        tempMap.put(newPair, tempMap.get(newPair) + tempMap.get(polymerMap.get(pair))); //Add one foreach pair
+
+                    } else if (pairMap.containsKey(newPair)) {
+                        tempMap.put(newPair, pairMap.get(newPair) + 1L);
+
+                    } else {
+                        tempMap.put(newPair, 1L);
+                    }
+                    newPair = polymerMap.get(pair) + pair.charAt(1);
+                }
+            }
+            pairMap.clear();
+            pairMap.putAll(tempMap);
+            tempMap.clear();
+
+        }
+        System.out.println(pairMap.toString());
+
+        Map<String, Long> letterMap = new HashMap<>();
+        for (String pair : pairMap.keySet()) {
+            String leftLetter = Character.toString(pair.charAt(0));
+            String rightLetter = Character.toString(pair.charAt(1));
+
+            if (letterMap.containsKey(leftLetter)) {
+                letterMap.put(leftLetter, letterMap.get(leftLetter) + 1L);
+            } else {
+                letterMap.put(leftLetter, 1L);
+            }
+
+            if (letterMap.containsKey(rightLetter)) {
+                letterMap.put(rightLetter, letterMap.get(rightLetter) + 1L);
+            } else {
+                letterMap.put(rightLetter, 1L);
+            }
+        }
+
+        System.out.println(letterMap);
+        Long max = Collections.max(letterMap.values()).longValue();
+        Long min = Collections.min(letterMap.values()).longValue();
+        return max - min;
     }
 
 
     private static void search(String polyPair, int round) {
 
-        if(++globalCounter % 100000000 == 0){
+        if (++globalCounter % 100000000 == 0) {
             System.out.println(globalCounter);
         }
         try {
