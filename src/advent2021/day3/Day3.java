@@ -1,48 +1,50 @@
 package advent2021.day3;
 
 import java.io.IOException;
+
 import datacollector.datacollector;
 
 public class Day3 {
 
-	public static void main(String[] args) throws IOException {
-		String[] inputdata = datacollector.getStringArray("src/advent2021/day3/inputdata");
-		String result = run1(inputdata);
-		System.out.println(result);
-	}
-	
-	public static String run1(String[] inputdata) {
-		int nollor = 0;
-		int ettor = 0;
-		String gamma = "";
-		String epislon = "";
+    public static void main(String[] args) throws IOException {
+        String[] inputdata = datacollector.getStringArray("src/advent2021/day3/inputdata");
+        int result = run1(inputdata);
+        System.out.println(result);
+    }
 
-		for (int i = 0; i < inputdata[0].length(); i++) {
-			for (int j = 0; j < inputdata.length; j++) {
+    public static int run1(String[] inputdata) {
+        int zeros = 0;
+        int ones = 0;
 
-				if (inputdata[j].charAt(i) == '0') {
-					nollor++;
-				} else {
-					ettor++;
-				}
-			}
+        int gamma = 0;
+        int epsilon = 0;
 
-			if (nollor < ettor) {
-				gamma += "1";
-				epislon += "0";
-			} else {
-				gamma += "0";
-				epislon += "1";
-			}
+        for (int i = 0; i < inputdata[0].length(); i++) {
+            for (String strNum : inputdata) {
 
-			nollor = 0;
-			ettor = 0;
-		}
-		int returnValue = Integer.parseInt(gamma,2)*Integer.parseInt(epislon,2);
-		return String.valueOf(returnValue);
-	}
+                if (strNum.charAt(i) == '0') {
+                    zeros++;
+                } else {
+                    ones++;
+                }
+            }
 
-	public static String run2(String[] inputdata) {
-		return null;
-	}
+            if (zeros < ones) {
+                gamma = gamma * 2 + 1;
+                epsilon = epsilon * 2;
+            } else {
+                gamma = gamma * 2;
+                epsilon = epsilon * 2 + 1;
+            }
+
+            zeros = 0;
+            ones = 0;
+        }
+
+        return gamma * epsilon;
+    }
+
+    public static String run2(String[] inputdata) {
+        return null;
+    }
 }
