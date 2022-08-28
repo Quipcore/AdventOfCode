@@ -21,21 +21,21 @@ public class Day6 {
     }
 
     public static int part1(String puzzledata) throws IOException {
-        List<String> dataList = datacollector.getStream(puzzledata).collect(Collectors.toList());
+        List<String> dataList = datacollector.getStream(puzzledata).toList();
 
-        String temp = "";
+        StringBuilder temp = new StringBuilder();
         int totalYes = 0;
 
         for (String ans : dataList) {
             if (!ans.equals("")) {
                 for (char c : ans.toCharArray()) {
-                    if (!temp.contains(String.valueOf(c))) {
+                    if (!temp.toString().contains(String.valueOf(c))) {
                         totalYes++;
                     }
                 }
-                temp += ans;
+                temp.append(ans);
             } else {
-                temp = "";
+                temp = new StringBuilder();
             }
         }
 
@@ -49,12 +49,11 @@ public class Day6 {
         String temp = "";
         int totalYes = 0;
         int peopleInGroup = 0;
-        for (int j = 0; j < dataList.size(); j++) {
-            if (!dataList.get(j).equals("")) {
+        for (String s : dataList) {
+            if (!s.equals("")) {
                 peopleInGroup++;
-                temp += dataList.get(j);
-            }
-            else {
+                temp += s;
+            } else {
 
                 System.out.println(temp);
                 for (char c : ALPHABET.toCharArray()) {
