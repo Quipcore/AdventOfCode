@@ -36,7 +36,7 @@ public class Bricka {
 
 			Element[] e = new Element[5];
 			for (int c = 0; c < 5; c++) {
-				e[c] = new Element(Integer.valueOf(cols.get(c)));
+				e[c] = new Element(Integer.parseInt(cols.get(c)));
 			}
 			elements[r] = e;
 		}
