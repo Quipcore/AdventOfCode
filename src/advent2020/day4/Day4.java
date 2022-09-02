@@ -49,7 +49,7 @@ public class Day4 {
 	//-------------------------------------------------------------------------------------
 	
 	public static int part2(String puzzledata) {
-		// TODO Auto-generated method stub
+
 		return 0;
 	}
 }

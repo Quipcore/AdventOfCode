@@ -24,7 +24,15 @@ public class Passport {
 		}
 	}
 
+
 	public boolean isValid() {
 		return valid;
+	}
+
+	public int getValidFields(){
+		int validField = 0;
+
+
+		return validField;
 	}
 }
