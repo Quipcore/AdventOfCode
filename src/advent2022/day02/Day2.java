@@ -7,12 +7,13 @@ import java.io.IOException;
 public class Day2 {
 
     public static void main(String[] args) throws IOException {
-        String puzzledata = "src/advent2022/day2/puzzledata";
+        String puzzledata = "src/advent2022/day02/puzzledata";
         
         int resultPart1 = part1(puzzledata);
-        System.out.println("Test 1: " + resultPart1);
+        System.out.println("Part 1: " + resultPart1);
+
         int resultPart2 = part2(puzzledata);
-        System.out.println("Test 2: " + resultPart2);
+        System.out.println("Part 2: " + resultPart2);
     }
 
     public static int part1(String puzzledata) throws IOException {

@@ -7,7 +7,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Day2Test {
-	String testdataPath = "src/advent2022/day2/testdata";
+	String testdataPath = "src/advent2022/day02/testdata";
 
 	@Test
 	void test1() throws IOException {

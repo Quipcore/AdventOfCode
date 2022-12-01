@@ -1,17 +1,18 @@
-package adventYYYY.dayD;
+package adventYYYY.dayDD;
 
 import java.io.IOException;
 import datacollector.datacollector;
 
-public class DayD {
+public class DayDD {
 
     public static void main(String[] args) throws IOException {
-        String puzzledata = "src/adventYYYY/dayD/puzzledata";
+        String puzzledata = "src/adventYYYY/dayDD/puzzledata";
         
         int resultPart1 = part1(puzzledata);
-        System.out.println("Test 1: " + resultPart1);
+        System.out.println("Part 1: " + resultPart1);
+
         int resultPart2 = part2(puzzledata);
-        System.out.println("Test 2: " + resultPart2);
+        System.out.println("Part 2: " + resultPart2);
     }
 
     public static int part1(String puzzledata) throws IOException {
