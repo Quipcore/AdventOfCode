@@ -13,25 +13,23 @@ import java.util.stream.Stream;
 public class datacollector {
 
 	public static int[] getIntArray(String url) throws IOException {
-		return getStream(url).mapToInt(s -> Integer.valueOf(s)).toArray();
+		return getStream(url).mapToInt(Integer::valueOf).toArray();
 	}
 	
 	//---------------------------------------------------------------------------------------------------
 
 	public static String[] getStringArray(String url) throws IOException {
-		return getStream(url).toArray(size -> new String[size]);
+		return getStream(url).toArray(String[]::new);
 	}
 
 	//---------------------------------------------------------------------------------------------------
 	
 	public static List<String> getList(String url) throws IOException {
-		return getStream(url).collect(() -> new LinkedList<>(), (list, element) -> list.add(element),
-				(listA, listB) -> listA.addAll(listB));
+		return getStream(url).collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
 	}
 
 	//---------------------------------------------------------------------------------------------------
 	
-	@SuppressWarnings("resource")
 	public static String getFirstLine(String url) throws IOException {
 		return new BufferedReader(new FileReader(new File(url))).readLine();
 	}
