@@ -1,5 +1,7 @@
 package advent2022.day01;
 
+import datacollector.datacollector;
+
 import java.io.IOException;
 
 public class Day1 {
@@ -14,7 +16,7 @@ public class Day1 {
     }
 
     public static int part1(String puzzledata) throws IOException {
-
+        datacollector.getStream(puzzledata);
         return 0;
     }
 
