@@ -13,14 +13,14 @@ class Day2Test {
 	void test1() throws IOException {
 		int result = Day2.part1(testdataPath);
 		System.out.println("Test 1: " + result);
-		assertEquals(0, result);
+		assertEquals(15, result);
 	}
 	
 	@Test
 	void test2() throws IOException {
 		int result = Day2.part2(testdataPath);
 		System.out.println("Test 2: " + result);
-		assertEquals(0, result);
+		assertEquals(12, result);
 	}
 
 }
