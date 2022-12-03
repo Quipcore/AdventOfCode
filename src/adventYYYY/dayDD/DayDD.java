@@ -2,7 +2,6 @@ package adventYYYY.dayDD;
 
 import java.io.IOException;
 
-import advent2022.day03.Day3;
 import datacollector.datacollector;
 
 public class DayDD {
@@ -18,7 +17,6 @@ public class DayDD {
     }
 
     public static int part1(String puzzledata) throws IOException {
-        datacollector.getStream(puzzledata);
         return 0;
     }
 
