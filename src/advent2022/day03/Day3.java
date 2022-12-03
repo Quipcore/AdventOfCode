@@ -4,17 +4,16 @@ import datacollector.datacollector;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 public class Day3 {
 
+    private static final String PUZZLE_DATA = "src/" + Day3.class.getPackageName().replace(".","/") + "/puzzeldata";
+
     public static void main(String[] args) throws IOException {
-        String puzzledata = "src/advent2022/day03/puzzledata";
-        
-        int resultPart1 = part1(puzzledata);
+        int resultPart1 = part1(PUZZLE_DATA);
         System.out.println("Part 1: " + resultPart1);
 
-        int resultPart2 = part2(puzzledata);
+        int resultPart2 = part2(PUZZLE_DATA);
         System.out.println("Part 2: " + resultPart2);
     }
 

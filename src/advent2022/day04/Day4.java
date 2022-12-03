@@ -1,14 +1,13 @@
-package adventYYYY.dayDD;
+package advent2022.day04;
+
+import datacollector.datacollector;
 
 import java.io.IOException;
 
-import advent2022.day03.Day3;
-import datacollector.datacollector;
-
-public class DayDD {
+public class Day4 {
 
     public static void main(String[] args) throws IOException {
-        final String PUZZLE_DATA = "src/" + DayDD.class.getPackageName().replace(".","/") + "/puzzeldata";
+        final String PUZZLE_DATA = "src/" + Day4.class.getPackageName().replace(".","/") + "/puzzeldata";
         
         int resultPart1 = part1(PUZZLE_DATA);
         System.out.println("Part 1: " + resultPart1);
