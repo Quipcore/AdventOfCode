@@ -1,12 +1,8 @@
 package datacollector;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -25,13 +21,22 @@ public class datacollector {
 	//---------------------------------------------------------------------------------------------------
 	
 	public static List<String> getList(String url) throws IOException {
-		return getStream(url).collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
+		return Files.readAllLines(Path.of(url));
 	}
 
 	//---------------------------------------------------------------------------------------------------
 	
 	public static String getFirstLine(String url) throws IOException {
-		return new BufferedReader(new FileReader(new File(url))).readLine();
+		return getStream(url).findFirst().orElse("");
+	}
+
+	public static List<String> getLines(String url, int startIndex, int endIndex) throws IOException {
+		return getList(url).subList(startIndex, endIndex);
+	}
+
+	public static List<String> getLines(String url, int startIndex) throws IOException {
+		List<String> wholeList = getList(url);
+		return wholeList.subList(startIndex, wholeList.size());
 	}
 
 	//---------------------------------------------------------------------------------------------------
