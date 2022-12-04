@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Day4 {
 
     public static void main(String[] args) throws IOException {
-        final String PUZZLE_DATA = "src/" + Day4.class.getPackageName().replace(".","/") + "/puzzeldata";
+        final String PUZZLE_DATA = "src/" + Day4.class.getPackageName().replace(".","/") + "/puzzledata";
         
         int resultPart1 = part1(PUZZLE_DATA);
         System.out.println("Part 1: " + resultPart1);
