@@ -16,6 +16,7 @@ local.properties
 .class
 .project
 *.iml
+htmlReport/
 
 # External tool builders
 .externalToolBuilders/
