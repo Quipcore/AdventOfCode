@@ -42,17 +42,16 @@ public class Day6 {
                 charData[j] = data.charAt(i+j);
             }
 
-            if(!containsRepition(charData)){
+            if(!containsRepetition(charData)){
                 return i+markerLength;
             }
         }
 
         return -1;
     }
-
     //--------------------------------------------------------------------------------
 
-    private static boolean containsRepition(char[] data){
+    private static boolean containsRepetition(char[] data){
         for(int i = 0; i < data.length; i++){
             for(int j = i+1; j < data.length; j++){
                 if(data[i] == data[j]){
