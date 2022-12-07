@@ -23,19 +23,10 @@ public class Dir {
 
     public void addFile(File file) {
         files.add(file);
-        currentSize += file.size;
+        //currentSize += file.size;
     }
 
-    public Dir getParent(boolean calc) {
-        if (calc) {
-            for (File file : files) {
-                currentSize += file.size;
-            }
-
-            for (Dir dir : dirs) {
-                currentSize += dir.currentSize;
-            }
-        }
+    public Dir getParent() {
         return parent;
 }
 

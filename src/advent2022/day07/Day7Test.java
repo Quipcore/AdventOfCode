@@ -17,10 +17,10 @@ class Day7Test {
 	}
 	
 	@Test
-	void test2() throws IOException {
+	void test2() throws Exception {
 		int result = Day7.part2(TEST_DATA);
 		System.out.println("Test 2: " + result);
-		assertEquals(0, result);
+		assertEquals(24933642, result);
 	}
 
 }
