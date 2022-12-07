@@ -36,17 +36,15 @@ public class Day7 {
     }
 
     //--------------------------------------------------------------
-    /*
-    Valid commands
-    $ cd name = change directory to name
-    $ cd .. = change directory to parent
-    $ ls = list all files and directories in current directory
-    dir name = create directory name
-    size name = create file in directory with name and size
-     */
 
     /**
      * Create node structure and returns root-node
+     *     Valid commands
+     *     $ cd name = change directory to name
+     *     $ cd .. = change directory to parent
+     *     $ ls = list all files and directories in current directory
+     *     dir name = create directory name
+     *     size name = create file in directory with name and size
      * @param instructions
      * @return
      * @throws Exception
