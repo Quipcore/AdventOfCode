@@ -45,8 +45,8 @@ public class Day7 {
      *     $ ls = list all files and directories in current directory
      *     dir name = create directory name
      *     size name = create file in directory with name and size
-     * @param instructions
-     * @return
+     * @param instructions list of valid instructions
+     * @return root node and its completed structure
      * @throws Exception
      */
     private static Dir createStructure(List<String> instructions) throws Exception {
