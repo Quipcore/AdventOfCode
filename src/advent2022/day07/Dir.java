@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Dir {
+
     String name;
-    private Dir parent;
+    private final Dir parent;
     List<Dir> dirs = new ArrayList<>();
     List<File> files = new ArrayList<>();
     int currentSize;
