@@ -1,6 +1,5 @@
 package advent2022.day07;
 
-import java.io.IOException;
 import java.util.List;
 
 import datacollector.datacollector;
@@ -22,39 +21,55 @@ public class Day7 {
     }
 
     public static int part1(String puzzledata) throws Exception {
-        List<String> ls = datacollector.getList(puzzledata);
-        Dir currentDir = createStructure(ls);
-        dirSize_1(currentDir);
+        List<String> instructions = datacollector.getList(puzzledata);
+        Dir currentDir = createStructure(instructions);
+        sumOfNodesUnderLimit(currentDir,100_000);
         return globalSum;
     }
 
-    //--------------------------------------------------------------
+    public static int part2(String puzzledata) throws Exception {
+        List<String> instructions = datacollector.getList(puzzledata);
+        Dir currentDir = createStructure(instructions);
+        int minSpace = currentDir.currentSize-40_000_000;
+        getValueOfRemovalNode(currentDir,minSpace);
+        return globalMin;
+    }
 
-    private static Dir createStructure(List<String> ls) throws Exception {
-        /*
-        Valid commands
-        $ cd name = change directory to name
-        $ cd .. = change directory to parent
-        $ ls = list all files and directories in current directory
-        dir name = create directory name
-        size name = create file in directory with name and size
-         */
-        ls.remove(0);
-        Dir currentDir = new Dir(null, "/"); // Root
-        for(String str : ls) {
-            if (str.contains("$ cd")) {
-                String[] split = str.split(" ");
+    //--------------------------------------------------------------
+    /*
+    Valid commands
+    $ cd name = change directory to name
+    $ cd .. = change directory to parent
+    $ ls = list all files and directories in current directory
+    dir name = create directory name
+    size name = create file in directory with name and size
+     */
+
+    /**
+     * Create node structure and returns root-node
+     * @param instructions
+     * @return
+     * @throws Exception
+     */
+    private static Dir createStructure(List<String> instructions) throws Exception {
+
+        instructions.remove(0);
+        Dir currentDir = new Dir(null, "/"); // Create root node
+
+        for(String commands : instructions) {
+            if (commands.contains("$ cd")) {
+                String[] split = commands.split(" ");
                 currentDir = split[2].equals("..") ? currentDir.getParent() : currentDir.changeDir(split[2]);
             }
-            else if(str.contains("dir ")) {
-                currentDir.addDir(new Dir(currentDir,str.split(" ")[1]));
+            else if(commands.contains("dir ")) {
+                currentDir.addDir(new Dir(currentDir,commands.split(" ")[1]));
                 dirAmount++;
             }
-            else if(str.equals("$ ls")) {
+            else if(commands.contains("$ ls")) {
                 currentDir.print();
             }
             else { //Add file to dir
-                String[] split = str.split(" ");
+                String[] split = commands.split(" ");
                 String fileName = split[1];
                 int size = Integer.parseInt(split[0]);
                 currentDir.addFile(new File(fileName, size));
@@ -65,37 +80,14 @@ public class Day7 {
         while(currentDir.getParent() != null){
             currentDir = currentDir.getParent();
         }
+
+        calcNodeValues(currentDir);
+
         return currentDir;
     }
 
     //--------------------------------------------------------------
 
-    private static void dirSize_1(Dir currentDir){
-        int sum = 0;
-        for(Dir dir : currentDir.dirs){
-            dirSize_1(dir);
-            sum += dir.currentSize;
-        }
-        for(File files : currentDir.files){
-            sum += files.size;
-        }
-        currentDir.currentSize = sum;
-        if(sum <= 100_000){
-            globalSum += sum;
-        }
-    }
-
-    //--------------------------------------------------------------
-
-    public static int part2(String puzzledata) throws Exception {
-        List<String> ls = datacollector.getList(puzzledata);
-        Dir currentDir = createStructure(ls);
-        calcNodeValues(currentDir);
-        int minSpace = currentDir.currentSize-40_000_000;
-
-        findMin(currentDir,minSpace);
-        return globalMin;
-    }
     private static void calcNodeValues(Dir currentDir){
         int sum = 0;
         for(Dir dir : currentDir.dirs){
@@ -108,9 +100,22 @@ public class Day7 {
         currentDir.currentSize = sum;
     }
 
-    private static void findMin(Dir currentDir,int minSpace){
+    //--------------------------------------------------------------
+
+    private static void sumOfNodesUnderLimit(Dir currentDir,int limit){
         for(Dir dir : currentDir.dirs){
-            findMin(dir,minSpace);
+            sumOfNodesUnderLimit(dir,limit);
+        }
+        if(currentDir.currentSize <= limit){
+            globalSum += currentDir.currentSize;
+        }
+    }
+
+    //--------------------------------------------------------------
+
+    private static void getValueOfRemovalNode(Dir currentDir, int minSpace){
+        for(Dir dir : currentDir.dirs){
+            getValueOfRemovalNode(dir,minSpace);
         }
         if(currentDir.currentSize > minSpace){
             globalMin = Math.min(globalMin,currentDir.currentSize);

@@ -40,12 +40,13 @@ public class Dir {
     }
 
     public void print() {
+        System.out.printf("%s, (dir)\n",name);
         for (Dir dir : dirs) {
-            System.out.printf("%s (dir)\n", dir.name);
+            System.out.printf("\t%s (dir)\n", dir.name);
         }
 
         for (File file : files) {
-            System.out.printf("%s (file, %d)", file.name, file.size);
+            System.out.printf("\t%s (file, %d)", file.name, file.size);
         }
     }
 }
