@@ -17,6 +17,13 @@ local.properties
 .project
 *.iml
 htmlReport/
+out/
+*.ilk
+*.pdb
+.vscode/
+out/
+testing/
+#puzzledata.txt
 
 # External tool builders
 .externalToolBuilders/

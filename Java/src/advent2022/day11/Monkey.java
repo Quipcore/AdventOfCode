@@ -22,7 +22,7 @@ public class Monkey {
     }
 
     private boolean useOld = false;
-    private Queue<Integer> heldItems;
+    private List<Integer> heldItems;
     private String operation;
     private final int operationConstant;
     private final int testConstant;
