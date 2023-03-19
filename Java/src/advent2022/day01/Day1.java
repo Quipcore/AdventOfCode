@@ -3,7 +3,6 @@ package advent2022.day01;
 import datacollector.datacollector;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
