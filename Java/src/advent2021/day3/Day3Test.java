@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
 import org.junit.jupiter.api.Test;
-import datacollector.datacollector;
+import utils.datacollector;
 
 class Day3Test {
 

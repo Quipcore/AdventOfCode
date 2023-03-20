@@ -1,13 +1,11 @@
 package advent2021.day14;
 
-import java.awt.event.WindowStateListener;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
-import datacollector.datacollector;
+import utils.datacollector;
 
 public class Day14 {
 

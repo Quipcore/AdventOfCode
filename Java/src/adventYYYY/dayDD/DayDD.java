@@ -2,8 +2,6 @@ package adventYYYY.dayDD;
 
 import java.io.IOException;
 
-import datacollector.datacollector;
-
 public class DayDD {
 
     public static void main(String[] args) throws IOException {

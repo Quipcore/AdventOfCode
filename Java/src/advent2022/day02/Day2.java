@@ -1,9 +1,8 @@
 package advent2022.day02;
 
-import datacollector.datacollector;
+import utils.datacollector;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 public class Day2 {

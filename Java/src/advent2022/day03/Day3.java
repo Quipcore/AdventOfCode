@@ -1,6 +1,6 @@
 package advent2022.day03;
 
-import datacollector.datacollector;
+import utils.datacollector;
 
 import java.io.IOException;
 import java.util.List;

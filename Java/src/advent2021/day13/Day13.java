@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-import datacollector.datacollector;
+import utils.datacollector;
 
 public class Day13 {
     public static void main(String[] args) throws IOException {

@@ -3,7 +3,7 @@ package advent2021.day6;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedList;
-import datacollector.datacollector;
+import utils.datacollector;
 
 public class Day6 {
 	class Fish {

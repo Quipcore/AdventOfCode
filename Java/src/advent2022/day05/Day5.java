@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-import datacollector.datacollector;
+import utils.datacollector;
 
 
 public class Day5 {

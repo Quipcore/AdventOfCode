@@ -3,7 +3,7 @@ package advent2020.day5;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
-import datacollector.datacollector;
+import utils.datacollector;
 public class Day5 {
 
 	public static void main(String[] args) throws IOException {

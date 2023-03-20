@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import datacollector.datacollector;
+import utils.datacollector;
 
 public class Day9 {
 

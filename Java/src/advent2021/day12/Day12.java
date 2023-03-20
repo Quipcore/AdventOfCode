@@ -3,7 +3,7 @@ package advent2021.day12;
 import java.io.IOException;
 import java.util.*;
 
-import datacollector.datacollector;
+import utils.datacollector;
 
 public class Day12 {
 

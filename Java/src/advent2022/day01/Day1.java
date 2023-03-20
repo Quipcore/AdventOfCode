@@ -1,6 +1,6 @@
 package advent2022.day01;
 
-import datacollector.datacollector;
+import utils.datacollector;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class Day1 {
 
     public static void main(String[] args) throws IOException {
-        String puzzledata = "src/advent2022/day01/puzzledata";
+        String puzzledata = "java/src/advent2022/day01/puzzledata";
 
         int resultPart1 = part1(puzzledata);
         System.out.println("Part 1: " + resultPart1);

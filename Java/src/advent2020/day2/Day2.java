@@ -2,7 +2,7 @@ package advent2020.day2;
 
 import java.io.IOException;
 import java.util.List;
-import datacollector.datacollector;
+import utils.datacollector;
 
 public class Day2 {
 

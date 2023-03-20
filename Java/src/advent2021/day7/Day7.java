@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
-import datacollector.datacollector;
+import utils.datacollector;
 
 public class Day7 {
 

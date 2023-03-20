@@ -3,7 +3,7 @@ package advent2021.day5;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import datacollector.datacollector;
+import utils.datacollector;
 
 public class Day5 {
 

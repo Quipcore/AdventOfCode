@@ -2,7 +2,7 @@ package advent2022.day06;
 
 import java.io.IOException;
 
-import datacollector.datacollector;
+import utils.datacollector;
 
 public class Day6 {
 

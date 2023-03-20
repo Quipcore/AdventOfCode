@@ -2,7 +2,7 @@ package advent2022.day07;
 
 import java.util.List;
 
-import datacollector.datacollector;
+import utils.datacollector;
 
 public class Day7 {
     private static int globalSum = 0;
