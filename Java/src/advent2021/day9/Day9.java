@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day9 {
 
@@ -78,7 +78,7 @@ public class Day9 {
 
 	private static int[][] createMap(String puzzledata) throws IOException {
 
-		List<String> input = datacollector.getList(puzzledata);
+		List<String> input = DataCollector.getList(puzzledata);
 
 		int map[][] = new int[input.size()][input.get(0).length()];
 

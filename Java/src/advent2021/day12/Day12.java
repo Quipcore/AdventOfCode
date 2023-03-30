@@ -3,7 +3,7 @@ package advent2021.day12;
 import java.io.IOException;
 import java.util.*;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day12 {
 
@@ -26,7 +26,7 @@ public class Day12 {
     public static int part1(String puzzledata) throws IOException {
         nodes = new HashMap<>();
         paths = new LinkedList<>();
-        datacollector.getStream(puzzledata).forEach(s -> {
+        DataCollector.getStream(puzzledata).forEach(s -> {
             String[] strArr = s.split("-");
             addNodes(strArr[0], strArr[1]);
             addNodes(strArr[1], strArr[0]);
@@ -70,7 +70,7 @@ public class Day12 {
         nodes = new HashMap<>();
         paths = new LinkedList<>();
 
-        datacollector.getStream(puzzledata).forEach(s -> {
+        DataCollector.getStream(puzzledata).forEach(s -> {
             String[] strArr = s.split("-");
             addNodes(strArr[0], strArr[1]);
             addNodes(strArr[1], strArr[0]);

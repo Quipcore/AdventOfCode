@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 
 public class Day5 {
@@ -25,7 +25,7 @@ public class Day5 {
 
     public static String part1(String puzzledata,String puzzlestack) throws IOException {
         List<Stack<String>> stkList = initStacks(puzzlestack);
-        List<String> instructionList = datacollector.getList(puzzledata);
+        List<String> instructionList = DataCollector.getList(puzzledata);
 
         for (String s : instructionList) {
 
@@ -51,7 +51,7 @@ public class Day5 {
 
     public static String part2(String puzzledata,String puzzlestack) throws IOException{
         List<Stack<String>> stkList = initStacks(puzzlestack);
-        List<String> instructionList = datacollector.getList(puzzledata);
+        List<String> instructionList = DataCollector.getList(puzzledata);
 
         for (String s : instructionList) {
 
@@ -82,7 +82,7 @@ public class Day5 {
 
     private static List<Stack<String>> initStacks(String puzzlestack) throws IOException {
         List<Stack<String>> stkList = new LinkedList<>();
-        List<String> startStacks = datacollector.getList(puzzlestack);
+        List<String> startStacks = DataCollector.getList(puzzlestack);
 
         int stackCount =  startStacks.get(startStacks.size()-1).split(" {3}").length;
 

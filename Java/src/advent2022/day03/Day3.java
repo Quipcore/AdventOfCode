@@ -1,6 +1,6 @@
 package advent2022.day03;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 import java.io.IOException;
 import java.util.List;
@@ -19,7 +19,7 @@ public class Day3 {
 
     public static int part1(String puzzledata) throws IOException {
         String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        return datacollector.getStream(puzzledata).mapToInt(str ->{
+        return DataCollector.getStream(puzzledata).mapToInt(str ->{
 
             String firstPack = str.substring(0, str.length()/2);
             String secondPack = str.substring(str.length()/2);
@@ -34,7 +34,7 @@ public class Day3 {
     }
 
     public static int part2(String puzzledata) throws IOException{
-        List<String> lineList = datacollector.getList(puzzledata);
+        List<String> lineList = DataCollector.getList(puzzledata);
         int result = 0;
         String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for(int i = 0; i < lineList.size(); i += 3){

@@ -3,7 +3,7 @@ package advent2015.day2;
 import java.io.IOException;
 import java.util.List;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day2 {
 
@@ -20,7 +20,7 @@ public class Day2 {
 	
 	public static int part1(String puzzledata) throws IOException {
 		
-		List<String> dimensions = datacollector.getList(puzzledata);
+		List<String> dimensions = DataCollector.getList(puzzledata);
 		
 		return dimensions.stream().map(s -> s.split("x")).map(s ->{
 			int sqrFeet = 0;
@@ -41,7 +41,7 @@ public class Day2 {
 	
 	public static int part2(String puzzledata) throws IOException {
 		
-		List<String> dimensions = datacollector.getList(puzzledata);
+		List<String> dimensions = DataCollector.getList(puzzledata);
 		
 		return dimensions.stream().map(s -> s.split("x")).map(s ->{
 			int ribbonLength = 0;

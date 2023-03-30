@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day7 {
 
@@ -31,7 +31,7 @@ public class Day7 {
 
 	private static int part(String puzzledata, Cost cost) throws IOException {
 		
-		String line = datacollector.getFirstLine(puzzledata);
+		String line = DataCollector.getFirstLine(puzzledata);
 		LinkedList<Integer> crabs = Arrays.asList(line.split(",")).stream().map(s -> Integer.valueOf(s)).collect(
 				() -> new LinkedList<>(), (list, element) -> list.add(element), (listA, listB) -> listA.addAll(listB));
 		Collections.sort(crabs);

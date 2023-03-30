@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 import java.util.stream.Collectors;
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day10 {
 
@@ -30,7 +30,7 @@ public class Day10 {
 
 	public static int part1(String puzzledata) throws IOException {
 
-		return datacollector.getStream(puzzledata).map(s -> {
+		return DataCollector.getStream(puzzledata).map(s -> {
 
 			Stack<Character> stk = new Stack<>();
 
@@ -54,7 +54,7 @@ public class Day10 {
 
 	public static long part2(String puzzledata) throws IOException {
 
-		List<Long> moddedList = datacollector.getStream(puzzledata).map(s -> {
+		List<Long> moddedList = DataCollector.getStream(puzzledata).map(s -> {
 
 			Stack<Character> stk = new Stack<>();
 			

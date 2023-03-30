@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day14 {
 
@@ -29,7 +29,7 @@ public class Day14 {
 
         polymerMap = new HashMap<>();
 
-        datacollector.getStream(puzzledata).forEach(s -> {
+        DataCollector.getStream(puzzledata).forEach(s -> {
             String[] temp = s.split(" ");
             polymerMap.put(temp[0], temp[2]);
         });
@@ -120,7 +120,7 @@ public class Day14 {
         Map<String, Long> pairMap = new HashMap<>();
         Map<String, Long> tempMap = new HashMap<>();
 
-        datacollector.getStream(puzzledata).forEach(s -> {
+        DataCollector.getStream(puzzledata).forEach(s -> {
             String[] temp = s.split(" ");
             polymerMap.put(temp[0], temp[2]);
         });

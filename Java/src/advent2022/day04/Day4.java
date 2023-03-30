@@ -1,6 +1,6 @@
 package advent2022.day04;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ public class Day4 {
     }
 
     public static int part1(String puzzledata) throws IOException {
-        return datacollector.getStream(puzzledata).mapToInt(pairs ->{
+        return DataCollector.getStream(puzzledata).mapToInt(pairs ->{
             String[] ranges = pairs.split(",");
 
             int firstMin = Integer.parseInt(ranges[0].split("-")[0]);
@@ -39,7 +39,7 @@ public class Day4 {
     }
 
     public static int part2(String puzzledata) throws IOException{
-        return datacollector.getStream(puzzledata).mapToInt(pairs ->{
+        return DataCollector.getStream(puzzledata).mapToInt(pairs ->{
             String[] ranges = pairs.split(",");
 
             int firstMin = Integer.parseInt(ranges[0].split("-")[0]);

@@ -3,7 +3,7 @@ package advent2021.day4;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day4 {
 
@@ -15,7 +15,7 @@ public class Day4 {
 	}
 
 	public static int part1(String brickFil, String nummerFil) throws IOException {
-		String[] input = datacollector.getStringArray(brickFil);
+		String[] input = DataCollector.getStringArray(brickFil);
 		List<Bricka> brickor = new LinkedList<>();
 
 		int index = 0;
@@ -28,7 +28,7 @@ public class Day4 {
 			index += 6;
 		}
 
-		String[] strArr = (datacollector.getFirstLine(nummerFil)).split(",");
+		String[] strArr = (DataCollector.getFirstLine(nummerFil)).split(",");
 		int[] nummer = new int[strArr.length];
 		for (int i = 0; i < strArr.length; i++) {
 			nummer[i] = Integer.valueOf(strArr[i]);
@@ -50,7 +50,7 @@ public class Day4 {
 
 	public static int part2(String brickFil, String nummerFil) throws IOException {
 		// TODO Auto-generated method stub
-		String[] input = datacollector.getStringArray(brickFil);
+		String[] input = DataCollector.getStringArray(brickFil);
 		List<Bricka> brickor = new LinkedList<>();
 
 		int index = 0;
@@ -63,7 +63,7 @@ public class Day4 {
 			index += 6;
 		}
 
-		String[] strArr = (datacollector.getFirstLine(nummerFil)).split(",");
+		String[] strArr = (DataCollector.getFirstLine(nummerFil)).split(",");
 		int[] nummer = new int[strArr.length];
 		for (int i = 0; i < strArr.length; i++) {
 			nummer[i] = Integer.valueOf(strArr[i]);

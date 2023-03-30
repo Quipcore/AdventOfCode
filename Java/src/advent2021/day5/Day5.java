@@ -3,7 +3,7 @@ package advent2021.day5;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day5 {
 
@@ -19,7 +19,7 @@ public class Day5 {
 
 	public static int part1(String puzzledata) throws IOException {
 		// TODO Auto-generated method stub
-		List<String> coords = datacollector.getList(puzzledata);
+		List<String> coords = DataCollector.getList(puzzledata);
 
 		List<LineSegment> lines = new LinkedList<>();
 		int maxVal = 0;
@@ -49,7 +49,7 @@ public class Day5 {
 
 	public static int part2(String puzzledata) throws IOException {
 		// TODO Auto-generated method stub
-		List<String> coords = datacollector.getList(puzzledata);
+		List<String> coords = DataCollector.getList(puzzledata);
 
 		List<LineSegment> lines = new LinkedList<>();
 		int maxVal = 0;

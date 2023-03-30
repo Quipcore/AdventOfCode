@@ -3,7 +3,7 @@ package advent2020.day4;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import utils.datacollector;
+import utils.DataCollector;
 public class Day4 {
 
 	public static void main(String[] args) throws IOException {
@@ -19,7 +19,7 @@ public class Day4 {
 	//-------------------------------------------------------------------------------------
 	
 	public static int part1(String puzzledata) throws IOException {
-		List<String> passportInfo = datacollector.getList(puzzledata);
+		List<String> passportInfo = DataCollector.getList(puzzledata);
 
 		LinkedList<Passport> passports = new LinkedList<>();
 		

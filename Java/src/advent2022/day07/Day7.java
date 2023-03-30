@@ -2,7 +2,7 @@ package advent2022.day07;
 
 import java.util.List;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day7 {
     private static int globalSum = 0;
@@ -21,14 +21,14 @@ public class Day7 {
     }
 
     public static int part1(String puzzledata) throws Exception {
-        List<String> instructions = datacollector.getList(puzzledata);
+        List<String> instructions = DataCollector.getList(puzzledata);
         Dir currentDir = createStructure(instructions);
         sumOfNodesUnderLimit(currentDir,100_000);
         return globalSum;
     }
 
     public static int part2(String puzzledata) throws Exception {
-        List<String> instructions = datacollector.getList(puzzledata);
+        List<String> instructions = DataCollector.getList(puzzledata);
         Dir currentDir = createStructure(instructions);
         int minSpace = currentDir.currentSize-40_000_000;
         getValueOfRemovalNode(currentDir,minSpace);

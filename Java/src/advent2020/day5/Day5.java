@@ -3,7 +3,7 @@ package advent2020.day5;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
-import utils.datacollector;
+import utils.DataCollector;
 public class Day5 {
 
 	public static void main(String[] args) throws IOException {
@@ -37,7 +37,7 @@ public class Day5 {
 	// ------------------------------------------------------------------------------
 	
 	private static List<Integer> getSeatList(String puzzledata) throws IOException {
-		return datacollector.getStream(puzzledata).map(s -> {
+		return DataCollector.getStream(puzzledata).map(s -> {
 
 			String row = s.split(String.valueOf(s.charAt(7)))[0];
 			String col = "";

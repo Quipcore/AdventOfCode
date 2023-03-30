@@ -2,7 +2,7 @@ package advent2022.day06;
 
 import java.io.IOException;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day6 {
 
@@ -17,7 +17,7 @@ public class Day6 {
     }
 
     public static int part1(String puzzledata) throws IOException {
-        String data = datacollector.getFirstLine(puzzledata);
+        String data = DataCollector.getFirstLine(puzzledata);
 
         int markerLength = 4;
         return getAnswer(data, markerLength);
@@ -26,7 +26,7 @@ public class Day6 {
     //--------------------------------------------------------------------------------
 
     public static int part2(String puzzledata) throws IOException{
-        String data = datacollector.getFirstLine(puzzledata);
+        String data = DataCollector.getFirstLine(puzzledata);
 
         int markerLength = 14;
         return getAnswer(data, markerLength);

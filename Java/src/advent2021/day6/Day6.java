@@ -3,7 +3,7 @@ package advent2021.day6;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedList;
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day6 {
 	class Fish {
@@ -35,7 +35,7 @@ public class Day6 {
 
 	public static long part1(String puzzledata, int days) throws IOException {
 
-		String line = datacollector.getFirstLine(puzzledata);
+		String line = DataCollector.getFirstLine(puzzledata);
 		LinkedList<Integer> fisk = Arrays.asList(line.split(",")).stream().map(s -> Integer.valueOf(s)).collect(
 				() -> new LinkedList<>(), (list, element) -> list.add(element), (listA, listB) -> listA.addAll(listB));
 
@@ -64,7 +64,7 @@ public class Day6 {
 	public static long part2(String puzzledata, int days) throws IOException {
 
 		long[] fishAges = new long[9];
-		String[] input = datacollector.getFirstLine(puzzledata).split(",");
+		String[] input = DataCollector.getFirstLine(puzzledata).split(",");
 
 		for (String s : input) {
 			fishAges[Integer.valueOf(s)]++;

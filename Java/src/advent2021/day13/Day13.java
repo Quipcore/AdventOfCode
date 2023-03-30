@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day13 {
     public static void main(String[] args) throws IOException {
@@ -23,7 +23,7 @@ public class Day13 {
     public static int part1(String dotdata, String folddata) throws IOException {
 
         final Boolean[][] map = createMap(dotdata, folddata);
-        List<String> foldList = datacollector.getStream(folddata).map(s -> s.split(" ")[2]).toList();
+        List<String> foldList = DataCollector.getStream(folddata).map(s -> s.split(" ")[2]).toList();
 
         String[] temp = foldList.get(0).split("=");
         String foldDirection = temp[0];
@@ -40,7 +40,7 @@ public class Day13 {
     public static int part2(String dotdata, String folddata) throws IOException {
 
         final Boolean[][] map = createMap(dotdata, folddata);
-        List<String> foldList = datacollector.getStream(folddata)
+        List<String> foldList = DataCollector.getStream(folddata)
                                              .map(s -> s.split(" ")[2]).toList();
 
         Boolean[][] final_map = map;
@@ -68,14 +68,14 @@ public class Day13 {
     //---------------------------------------------------------------------------------------------------------
 
     private static Boolean[][] createMap(String dotdata, String folddata) throws IOException {
-        int yMax = Integer.parseInt(datacollector.getStream(folddata)
+        int yMax = Integer.parseInt(DataCollector.getStream(folddata)
                 .filter(s -> s.contains("y="))
                 .findFirst()
                 .orElse("")
                 .split(" ")[2]
                 .split("=")[1]) * 2 + 1;
 
-        int xMax = Integer.parseInt(datacollector.getStream(folddata)
+        int xMax = Integer.parseInt(DataCollector.getStream(folddata)
                 .filter(s -> s.contains("x="))
                 .findFirst()
                 .orElse("")
@@ -85,7 +85,7 @@ public class Day13 {
         final Boolean[][] map = new Boolean[yMax][xMax];
         Arrays.stream(map).forEach(boolArr -> Arrays.fill(boolArr, false));
 
-        datacollector.getStream(dotdata).forEach(s -> {
+        DataCollector.getStream(dotdata).forEach(s -> {
             String[] temp = s.split(",");
             map[Integer.parseInt(temp[1])][Integer.parseInt(temp[0])] = true;
         });

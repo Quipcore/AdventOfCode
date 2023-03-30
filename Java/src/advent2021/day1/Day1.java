@@ -2,13 +2,13 @@ package advent2021.day1;
 
 import java.io.IOException;
 import java.util.LinkedList;
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day1 {
 
 	public static void main(String[] args) throws IOException {
 
-		int[] inputdata = datacollector.getIntArray("java/src/advent2021/day1/inputdata");
+		int[] inputdata = DataCollector.getIntArray("java/src/advent2021/day1/inputdata");
 		
 		LinkedList<Integer> measurements = new LinkedList<>();
 		for(int i = 0; i < inputdata.length-2; i++) {

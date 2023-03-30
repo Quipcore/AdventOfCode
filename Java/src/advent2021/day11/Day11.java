@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day11 {
     private static class Pair {
@@ -30,7 +30,7 @@ public class Day11 {
     // --------------------------------------------------------------------------------
 
     public static int part1(String puzzledata) throws IOException {
-        String[] rows = datacollector.getStringArray(puzzledata);
+        String[] rows = DataCollector.getStringArray(puzzledata);
 
         int[][] octopuses = new int[10][10];
         int counter = 0;
@@ -89,7 +89,7 @@ public class Day11 {
     // --------------------------------------------------------------------------------
 
     public static int part2(String puzzledata) throws IOException {
-        String[] rows = datacollector.getStringArray(puzzledata);
+        String[] rows = DataCollector.getStringArray(puzzledata);
 
         int[][] octopuses = new int[10][10];
         int counter = 0;

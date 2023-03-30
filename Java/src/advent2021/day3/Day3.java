@@ -2,12 +2,12 @@ package advent2021.day3;
 
 import java.io.IOException;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day3 {
 
     public static void main(String[] args) throws IOException {
-        String[] inputdata = datacollector.getStringArray("src/advent2021/day3/inputdata");
+        String[] inputdata = DataCollector.getStringArray("src/advent2021/day3/inputdata");
         int result = run1(inputdata);
         System.out.println(result);
     }

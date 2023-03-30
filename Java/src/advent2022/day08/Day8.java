@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day8 {
 
@@ -26,7 +26,7 @@ public class Day8 {
 
     public static int part1(String puzzledata) throws IOException {
 
-        List<String> data = datacollector.getList(puzzledata);
+        List<String> data = DataCollector.getList(puzzledata);
 
         int[][] trees = new int[data.get(0).length()][data.size()];
 
@@ -91,7 +91,7 @@ public class Day8 {
 
     public static int part2(String puzzledata) throws IOException{
 
-        List<String> data = datacollector.getList(puzzledata);
+        List<String> data = DataCollector.getList(puzzledata);
 
         int[][] trees = new int[data.get(0).length()][data.size()];
 

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day8 {
 
@@ -21,7 +21,7 @@ public class Day8 {
 
 	public static int part1(String puzzledata) throws IOException {
 
-		List<String> nums = datacollector.getList(puzzledata);
+		List<String> nums = DataCollector.getList(puzzledata);
 		return nums.stream().map(s -> s.split("\\|")[1]) // Split on "|" return every after
 				.map(s -> {
 					String[] arr = s.split(" ");
@@ -38,7 +38,7 @@ public class Day8 {
 	}
 
 	public static int part2(String puzzledata) throws IOException {
-		List<String> nums = datacollector.getList(puzzledata);
+		List<String> nums = DataCollector.getList(puzzledata);
 
 		return nums.stream().map(s -> calcnum(s)).reduce(0, (a, b) -> a + b);
 

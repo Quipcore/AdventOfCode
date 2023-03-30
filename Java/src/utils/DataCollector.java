@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class datacollector {
+public class DataCollector {
 
 	public static int[] getIntArray(String url) throws IOException {
 		return getStream(url).mapToInt(Integer::valueOf).toArray();

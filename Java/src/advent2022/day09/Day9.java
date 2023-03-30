@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day9 {
 
@@ -36,7 +36,7 @@ public class Day9 {
 
         Set<String> uniqueTailPos = new HashSet<>();
         uniqueTailPos.add(tailX + ", " + tailY);
-        List<String> instructions = datacollector.getList(puzzledata);
+        List<String> instructions = DataCollector.getList(puzzledata);
 
         for (String ins : instructions) {
             String[] split = ins.split(" ");
@@ -115,7 +115,7 @@ public class Day9 {
 
         List<String> uniqueTailPos = new LinkedList<>();
         uniqueTailPos.add(String.format("%d, %d", 0, 0));
-        List<String> instructions = datacollector.getList(puzzledata);
+        List<String> instructions = DataCollector.getList(puzzledata);
 
         for (String ins : instructions) {
             String[] split = ins.split(" ");

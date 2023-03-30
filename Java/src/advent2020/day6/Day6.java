@@ -1,6 +1,6 @@
 package advent2020.day6;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,7 +21,7 @@ public class Day6 {
     }
 
     public static int part1(String puzzledata) throws IOException {
-        List<String> dataList = datacollector.getStream(puzzledata).toList();
+        List<String> dataList = DataCollector.getStream(puzzledata).toList();
 
         StringBuilder temp = new StringBuilder();
         int totalYes = 0;
@@ -43,7 +43,7 @@ public class Day6 {
     }
 
     public static int part2(String puzzledata) throws IOException {
-        List<String> dataList = datacollector.getStream(puzzledata).collect(Collectors.toList());
+        List<String> dataList = DataCollector.getStream(puzzledata).collect(Collectors.toList());
         dataList.add(""); //Needed to access else statement for last string
 
         String temp = "";

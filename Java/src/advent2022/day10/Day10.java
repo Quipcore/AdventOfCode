@@ -3,7 +3,7 @@ package advent2022.day10;
 import java.io.IOException;
 import java.util.List;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day10 {
 
@@ -26,7 +26,7 @@ public class Day10 {
         int signalStrength = clockCycle * xRegister;
         List<Integer> cyclesToLookAt = List.of(20, 60, 100, 140, 180, 220);
 
-        List<String> instructions = datacollector.getList(puzzledata);
+        List<String> instructions = DataCollector.getList(puzzledata);
         for (String str : instructions) {
             String[] split = str.split(" ");
             clockCycle++;
@@ -50,7 +50,7 @@ public class Day10 {
         int xRegister = 1;
         int clockCycle = 0;
         int pos = 0;
-        List<String> instructions = datacollector.getList(puzzledata);
+        List<String> instructions = DataCollector.getList(puzzledata);
         for (String str : instructions) {
             String[] split = str.split(" ");
             if(clockCycle % 40 == 0){

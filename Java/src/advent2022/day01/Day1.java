@@ -1,6 +1,6 @@
 package advent2022.day01;
 
-import utils.datacollector;
+import utils.DataCollector;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -21,7 +21,7 @@ public class Day1 {
     }
 
     public static int part1(String puzzledata) throws IOException {
-        List<String> calorieList = datacollector.getStream(puzzledata).collect(Collectors.toList());
+        List<String> calorieList = DataCollector.getStream(puzzledata).collect(Collectors.toList());
         calorieList.add("");
         int max = 0;
         int sum = 0;
@@ -41,7 +41,7 @@ public class Day1 {
     }
 
     public static int part2(String puzzledata) throws IOException{
-        List<String> calorieList = datacollector.getStream(puzzledata).collect(Collectors.toList());
+        List<String> calorieList = DataCollector.getStream(puzzledata).collect(Collectors.toList());
         calorieList.add("");
         List<Integer> totalCalories = new LinkedList<>();
 

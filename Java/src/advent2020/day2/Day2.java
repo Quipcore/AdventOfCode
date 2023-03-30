@@ -2,7 +2,7 @@ package advent2020.day2;
 
 import java.io.IOException;
 import java.util.List;
-import utils.datacollector;
+import utils.DataCollector;
 
 public class Day2 {
 
@@ -18,7 +18,7 @@ public class Day2 {
 	}
 
 	public static int part1(String puzzledata) throws IOException {
-		List<String> passwords = datacollector.getList(puzzledata);
+		List<String> passwords = DataCollector.getList(puzzledata);
 
 		return passwords.stream().map(s -> s.split(":")).map(s -> {
 
@@ -53,7 +53,7 @@ public class Day2 {
 	}
 
 	public static int part2(String puzzledata) throws IOException {
-		List<String> passwords = datacollector.getList(puzzledata);
+		List<String> passwords = DataCollector.getList(puzzledata);
 
 		return passwords.stream().map(s -> s.split(":")).map(s -> {
 			int index = 0;
