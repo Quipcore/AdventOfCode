@@ -1,58 +1,112 @@
 package advent2022.day11;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
-public class Monkey {
+public class Monkey implements Comparable<Monkey> {
 
-    public Monkey(List<Integer> heldItems, String operation, int testConstant, int trueMonkey, int falseMonkey) {
-        this.heldItems = heldItems;
+    private final int monkeyNum;
+    private final String operation;
+    private final int operationConst;
+    private final String operationSymbol;
+    private final int divisionConst;
+    private final int trueMonkey;
+    private final int falseMonkey;
+
+    private final boolean operandIsOld;
+    private final boolean divByThree;
+
+    private List<Integer> worryLevels;
+
+    private int inspectedItems = 0;
+
+    public Monkey(int monkeyNum, List<Integer> heldItems, String operation, int divisionConst, int trueMonkey, int falseMonkey, boolean setDivByThree) {
+        this.monkeyNum = monkeyNum;
+        this.worryLevels = heldItems;
+
         this.operation = operation;
-        String[] split = operation.split(" ");
-        if(!split[2].equalsIgnoreCase("old")){
-            this.operationConstant = Integer.parseInt(split[2]);
-        }else{
-            this.operationConstant = 0;
-            useOld = true;
+        String[] opString = operation.split(" ");
+        this.operationSymbol = opString[1];
+        this.operandIsOld = opString[2].equals("old");
+        if (!operandIsOld) {
+            this.operationConst = Integer.parseInt(opString[2]);
+        } else {
+            this.operationConst = -1;
         }
+        this.divisionConst = divisionConst;
 
-        this.testConstant = testConstant;
         this.trueMonkey = trueMonkey;
         this.falseMonkey = falseMonkey;
+        this.divByThree = setDivByThree;
     }
 
-    private boolean useOld = false;
-    private List<Integer> heldItems;
-    private String operation;
-    private final int operationConstant;
-    private final int testConstant;
-    private int trueMonkey;
-    private int falseMonkey;
+    public List<Item> inspectItems() {
+        List<Item> thrownItems = new LinkedList<>();
+        for (int worryItem : worryLevels) {
+            int newWorryLevel;
+            if (divByThree) {
+                newWorryLevel = switch (operationSymbol) {
+                    case "*" -> operandIsOld ? worryItem * worryItem : worryItem * operationConst;
+                    case "+" -> operandIsOld ? worryItem + worryItem : worryItem + operationConst;
+                    default -> throw new ArithmeticException("Symbol not * or +");
+                };
+                newWorryLevel /= 3;
+            } else {
+                newWorryLevel = switch (operationSymbol) {
+                    case "*" -> operandIsOld ? worryItem * worryItem : worryItem * operationConst;
+                    case "+" -> operandIsOld ? worryItem + worryItem : worryItem + operationConst;
+                    default -> throw new ArithmeticException("Symbol not * or +");
+                };
 
+                newWorryLevel %= divisionConst;
+            }
 
-    private int calcOperation(int old){
-        int constant = operationConstant;
-        if(useOld){
-            constant = old;
+            if (newWorryLevel % divisionConst == 0) {
+                thrownItems.add(new Item(trueMonkey, newWorryLevel));
+            } else {
+                thrownItems.add(new Item(falseMonkey, newWorryLevel));
+            }
+
+            inspectedItems++;
         }
 
-        if(operation.split(" ")[1].equalsIgnoreCase("+")){
-            return old + constant;
-        }
-        return old*constant;
+        worryLevels = new LinkedList<>();
+        return thrownItems;
     }
 
-    public int getNextMonkey(int old){
-        if(calcOperation(old) % testConstant == 0){
-            return trueMonkey;
-        }
-        return falseMonkey;
+    public void addItem(Item item) {
+        worryLevels.add(item.worryLevel);
+    }
+
+    public int getMonkeyNum() {
+        return monkeyNum;
+    }
+
+    public int getInspectedItems() {
+        return inspectedItems;
+    }
+
+    public String toString() {
+        return "Monkey " + monkeyNum + ": " + worryLevels;
     }
 
 
-
-
-
-
-
+    @Override
+    public int compareTo(Monkey o) {
+        if (o.getInspectedItems() == this.getInspectedItems()) {
+            return 0;
+        } else if (o.getInspectedItems() < this.getInspectedItems()) {
+            return -1;
+        } else if (o.getInspectedItems() > this.getInspectedItems()) {
+            return 1;
+        } else {
+            try {
+                throw new Exception("");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
 }
