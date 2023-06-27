@@ -11,16 +11,16 @@ class DayDDTest {
 
 	@Test
 	void test1() throws IOException {
-		int result = DayDD.part1(TEST_DATA);
+		String result = DayDD.part1(TEST_DATA);
 		System.out.println("Test 1: " + result);
-		assertEquals(0, result);
+		assertEquals("", result);
 	}
 	
 	@Test
 	void test2() throws IOException {
-		int result = DayDD.part2(TEST_DATA);
+		String result = DayDD.part2(TEST_DATA);
 		System.out.println("Test 2: " + result);
-		assertEquals(0, result);
+		assertEquals("", result);
 	}
 
 }
